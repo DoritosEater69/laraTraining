@@ -14,13 +14,10 @@
                         </div>
                     @endif
 
-                    <h1>Welcome to Your Dashboard Page</h1>
-                    Your <b>Name</b>: {{ $user->name }}<br>
-                    Your Email: {{ $user->email }}<br><br>
-                    Your Role: {{ $user->roles->implode('name', "") }}<br><br>
-                    Your created your Account at: {{ $user->created_at }}<br>
-                    Your updated your Account at: {{ $user->updated_at }}<br>
-                    <br>
+                    <h1>Apply for Admin Rights</h1>
+                    <form>
+                      <a href="{{ route('admin_req_send') }}" type="submit" class="btn btn-primary">Apply</a>
+                    </form>
 
                 </div>
             </div>

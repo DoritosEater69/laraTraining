@@ -4,3 +4,5 @@
 [01-Sep-2020 12:13:34 UTC] PHP Fatal error:  Cannot use Illuminate\Support\Facades\Request as Request because the name is already in use in /var/www/html/git/_programming/web/newLaraShopFix/app/Http/Controllers/UserProfile.php on line 6
 [01-Sep-2020 12:25:46 UTC] PHP Fatal error:  Can't use method return value in write context in /var/www/html/git/_programming/web/newLaraShopFix/app/Http/Controllers/UserProfile.php on line 26
 [01-Sep-2020 13:19:45 UTC] PHP Fatal error:  Constant expression contains invalid operations in /var/www/html/git/_programming/web/newLaraShopFix/app/Http/Controllers/Auth/LoginController.php on line 29
+[02-Sep-2020 09:22:32 UTC] PHP Fatal error:  Cannot use HasRoles as HasRoles because the name is already in use in /var/www/html/git/_programming/web/laraTraining/app/User.php on line 9
+[02-Sep-2020 09:22:51 UTC] PHP Fatal error:  Cannot use HasRoles as HasRoles because the name is already in use in /var/www/html/git/_programming/web/laraTraining/app/User.php on line 9

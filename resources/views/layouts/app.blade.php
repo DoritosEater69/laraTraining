@@ -55,6 +55,19 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+
+                                    @role('admin')
+                                        <a class="dropdown-item" href="{{ route('user_manage') }}">Userlist</a>
+                                        <a class="dropdown-item" href="{{ route('admin') }}">Admin requests</a>
+                                    @endrole
+
+                                    @role('user')
+                                        <a class="dropdown-item" href="{{ route('admin_req') }}">Request Admin Status</a>
+                                    @endrole
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

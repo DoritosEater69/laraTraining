@@ -14,13 +14,18 @@
                         </div>
                     @endif
 
-                    <h1>Welcome to Your Dashboard Page</h1>
-                    Your <b>Name</b>: {{ $user->name }}<br>
-                    Your Email: {{ $user->email }}<br><br>
-                    Your Role: {{ $user->roles->implode('name', "") }}<br><br>
-                    Your created your Account at: {{ $user->created_at }}<br>
-                    Your updated your Account at: {{ $user->updated_at }}<br>
-                    <br>
+                    <h1>Success - Users were given all rights</h1>
+
+                    <ul class="list-group">
+                        @foreach ($users as $user)
+                          <p class="">Username:</p>
+                          <p>{{ $user->name }}</p>
+                          <p class="">Email:</p>
+                          <p>{{ $user->email }}</p>
+                        @endforeach
+                    </ul>
+
+                    <a href=" {{ route('admin_req_accept') }} " type="button" class="btn btn-dark">Give rights</a>
 
                 </div>
             </div>

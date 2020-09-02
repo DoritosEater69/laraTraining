@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Auth;
 use Mail;
 use App\Mail\welcome_mail;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -27,6 +30,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $user_role = $user->roles->pluck('name');
         return view('home', ['user' => $user]);
     }
 
