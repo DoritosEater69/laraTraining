@@ -33,7 +33,6 @@ Route::get('/admin_request_accept', 'AdminPanel@send')->name('admin_req_accept')
 
 
 Route::get('user/{user}', 'UserManageActions@show')->name('user_manage.show')->middleware('auth', 'role:admin');
-Route::get('/user_management_edit', 'UserManageActions@edit')->name('user_manage_edit')->middleware('auth', 'role:admin');
-Route::get('/user_management_delete', 'UserManageActions@destroy')->name('user_manage_delete')->middleware('auth', 'role:admin');
+
 
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
