@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('User Details') }}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,6 @@
                     @endif
 
                     <h1>Welcome to Your User Page</h1>
-                    <p>This is the list of all Users</p>
 
                     <table class="table table-bordered">
                       <thead>
@@ -33,7 +32,10 @@
                           <td> {{ $user->email }} </td>
                           <td> {{ $user->name }} </td>
                           <td> {{ $user->roles->pluck('name') }} </td>
-                          <td> <a href="{{ route('user_manage.show', $user) }}" type="button" class="btn btn-primary">Show</a></td>
+                          <td> <a href="{{ route('user_manage.show', $user) }}" type="button" class="btn btn-primary">Show</a>
+                               <a href="{{ route('user_manage.edit', $user) }}" type="button" class="btn btn-primary">Edit</a>
+                               <a href="{{ route('user_manage.del', $user) }}" type="button" class="btn btn-primary">Delete</a>
+                          </td>
                         </tr>
                       </tbody>
                     </table>

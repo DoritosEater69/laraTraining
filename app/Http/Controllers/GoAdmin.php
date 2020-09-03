@@ -10,11 +10,15 @@ use Auth;
 
 class GoAdmin extends Controller
 {
+
+//Active user gets admin role
+
     public function make_admin(){
         $user = Auth::user();
         $user->assignRole('admin');
     }
 
+//Active user loose admin role
     public function remove_admin(){
         $user = Auth::user();
         $user->removeRole('admin');

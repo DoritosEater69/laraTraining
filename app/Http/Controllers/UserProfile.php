@@ -23,7 +23,7 @@ class UserProfile extends Controller
         'name' => 'string',
         'email' => 'string|max:255',
         'password' => 'min:1|max:100',
-        'g-recaptcha-response' => 'required|captcha'
+        // 'g-recaptcha-response' => 'required|captcha'
         ]);
 
         $user = Auth::user();

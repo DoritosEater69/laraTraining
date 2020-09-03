@@ -27,6 +27,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+//Outputs the User Data
     public function index()
     {
         $user = Auth::user();
@@ -34,6 +36,7 @@ class HomeController extends Controller
         return view('home', ['user' => $user]);
     }
 
+//Sends Success Mail to the Users Email
     public function sendMail()
     {
         $user = Auth::user();

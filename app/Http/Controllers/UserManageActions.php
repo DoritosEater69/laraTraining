@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserManageActions extends Controller
 {
@@ -46,7 +47,7 @@ class UserManageActions extends Controller
      */
     public function show(User $user)
     {
-        return view('user.userlist_detail', ['user' => $user]);
+        return view('user.show.user', ['user' => $user]);
     }
 
     /**
@@ -55,9 +56,10 @@ class UserManageActions extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($user)
     {
-        //
+        $user_data = User::find($user);
+        return view('user.edit.user', ['user' => $user_data]);
     }
 
     /**
@@ -67,10 +69,18 @@ class UserManageActions extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $user)
     {
-        //
-    }
+
+        $user_data = User::find($user)->update(array(
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->newPassword)
+        ));
+
+        $user = User::find($user);
+        return view('user.show.user', compact('user'));
+        }
 
     /**
      * Remove the specified resource from storage.
@@ -78,8 +88,9 @@ class UserManageActions extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($user)
     {
-        //
+        $user_data = User::find($user)->delete();
+        return view('user.delete.user', ['user' => $user]);
     }
 }

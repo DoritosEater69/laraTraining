@@ -14,16 +14,32 @@
                         </div>
                     @endif
 
-                    <h1>Welcome to Your User Page</h1>
+                    <h1>Admin Requests by Users</h1>
 
-                    <ul class="list-group">
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Role</th>
+                          <th scope="col">Options</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+
                         @foreach ($users as $user)
-                          <p class="">Username:</p>
-                          <p>{{ $user->name }}</p>
-                          <p class="">Email:</p>
-                          <p>{{ $user->email }}</p>
+                        <tr>
+                          <th scope="row"> {{ $user->id }} </th>
+                          <td> {{ $user->email }} </td>
+                          <td> {{ $user->name }} </td>
+                          <td> {{ $user->roles->pluck('name') }} </td>
+                          <td> <a href="{{ route('admin_req_accept_single', $user->id) }}" type="button" class="btn btn-primary">Grant Access</a></td>
+                        </tr>
                         @endforeach
-                    </ul>
+
+                      </tbody>
+                    </table>
 
                     <a href=" {{ route('admin_req_accept') }} " type="button" class="btn btn-dark">Give rights</a>
 

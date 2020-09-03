@@ -70,10 +70,11 @@
                     @auth
                         <a href="{{ url('/home') }}">Dashboard</a>
                         <a href="{{ route('user_profile') }}">Profile</a>
+                        <a href="{{ route('blog') }}">Blog</a>
 
                     @role('admin')
                         <a href="{{ route('admin') }}">Admin requests</a>
-                        <a href="{{ url('user_manage') }}">Userlist</a>
+                        <a href="{{ route('user_manage') }}">Userlist</a>
                     @endrole
 
                         <a href="{{ route('logout') }}">Logout</a>
@@ -101,9 +102,11 @@
                     <div class="col-6">
                         <h1>If you are logged in - You can see this content.</h1>
                     </div>
+                    @role('admin')
                     <div class="col-6">
-                        <h1>If you are logged in - You can also see this content.</h1>
+                        <h1>If you are logged in and you're admin - You can see this content.</h1>
                     </div>
+                    @endrole
                 </div>
             </div>
         @else
