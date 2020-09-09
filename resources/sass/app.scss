@@ -6,3 +6,127 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+
+.links{
+    color: red !important;
+}
+
+body{
+    background-color: #1d2d50 !Important;
+}
+
+html, body
+    {
+        color: #636b6f;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 200;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 84px;
+        color: #fbecec;
+    }
+
+    .links > a {
+        color: #fbecec;
+        padding: 0 25px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: .1rem;
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+
+    .card{
+        color: white;
+        border: 0;
+        background-color: inherit;
+    }
+
+    .card-body{
+        background-color: #1e5f74;
+        opacity: 0.9;
+    }
+
+    .form-control{
+        color: white;
+        background-color: inherit;
+        border: 2px solid #ced4da;
+    }
+
+    .icon-register{
+        height: 10%;
+        width: 10%;
+    }
+
+    .icon-login{
+        height: 10%;
+        width: 10%;
+    }
+
+    .form-label{
+        font-size: 1.6em;
+    }
+
+
+    .navbar{
+        background-color: #1a1a2e;
+        color: #ced4da;
+    }
+
+    .navbar a{
+        color: #ced4da;
+    }
+
+
+    .dropdown-menu{
+        background-color: #1e5f74;
+        color: white;
+    }
+
+
+table, .table{
+    th{
+        background-color: rgba(26, 26, 46, 0.5);
+        color: white;
+        border-top: 0;
+    }
+
+    td{
+        color: white;
+        font-weight: bold;
+        border-top: 0;
+    }
+
+}

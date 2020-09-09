@@ -17,7 +17,7 @@
                     <h1>Welcome to Your User Page</h1>
                     <p>This is the list of all Users</p>
 
-                    <table class="table table-bordered">
+                    <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">ID</th>
@@ -35,7 +35,7 @@
                           <td> {{ $user->email }} </td>
                           <td> {{ $user->name }} </td>
                           <td> {{ $user->roles->pluck('name') }} </td>
-                          <td> <a href="{{ route('user_manage.show', $user) }}" type="button" class="btn btn-primary">Show</a></td>
+                          <td> <a href="{{ route('user_manage.show', $user) }}" type="button" class="btn btn-primary w-100">Show</a></td>
                         </tr>
                         @endforeach
 

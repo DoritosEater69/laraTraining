@@ -16,7 +16,7 @@
 
                     <h1>Welcome to Your User Page</h1>
 
-                    <table class="table table-bordered">
+                    <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">ID</th>
