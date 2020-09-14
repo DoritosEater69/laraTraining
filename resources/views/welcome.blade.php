@@ -1,31 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Dashboard</a>
-                        <a href="{{ route('user_profile') }}">Profile</a>
-                        <a href="{{ route('blog') }}">Blog</a>
 
-                    @role('admin')
-                        <a href="{{ route('admin') }}">Admin requests</a>
-                        <a href="{{ route('user_manage') }}">Userlist</a>
-                    @endrole
-
-                        <a href="{{ route('logout') }}">Logout</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content container">
+    <div class="col-12 title-overlay">
+            <div class="content container w-100 h-100">
                 <div class="row">
                 <div class="col-12 title m-b-md">
                     <p>{{ config('app.name') }}</p>
@@ -51,14 +29,62 @@
             <div class="row">
                 <div class="col-12">
                     <h1>You are not logged in yet!</h1>
+                    <h1 class="pb-4">Scroll <span class="text-white">down</span> to see something nice!</h1>
+                    <svg height="20%" width="20%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve">
+                        <g>
+                            <g>
+                                <polygon points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093   " fill="white"/>
+                            </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                    </svg>
                 </div>
             </div>
         </div>
-
         @endif
     </div>
+</div>
+<div class="container-fluid mx-0 px-0">
+    <img src="{{ asset('images/background_main.png') }}" class="w-100">
+    <img src="{{ asset('images/background_main_2.png') }}" class="w-100">
+</div>
+<div class="col-12 tile1">
+            <div class="content container w-100 h-100">
+                <div class="row">
+                    <div class="col-12 title m-b-md first-col">
+                        <p>Test</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="container-fluid mx-0 px-0">
-        <img src="{{ asset('images/background_main.png') }}" class="w-100">
-        <img src="{{ asset('images/background_main_2.png') }}" class="w-100">
-    </div>
+</div>

@@ -25,6 +25,10 @@ html, body
         margin: 0;
     }
 
+    main{
+        margin-top: 10%;
+    }
+
     .full-height {
         height: 100vh;
     }
@@ -43,6 +47,10 @@ html, body
         position: absolute;
         right: 10px;
         top: 18px;
+        position: fixed !important;
+        left: 0;
+        z-index: 1030;
+
     }
 
     .content {
@@ -52,16 +60,6 @@ html, body
     .title {
         font-size: 84px;
         color: #fbecec;
-    }
-
-    .links > a {
-        color: #fbecec;
-        padding: 0 25px;
-        font-size: 13px;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-decoration: none;
-        text-transform: uppercase;
     }
 
     .m-b-md {
@@ -129,4 +127,53 @@ table, .table{
         border-top: 0;
     }
 
+}
+
+.title-overlay{
+    top: 60%;
+    bottom: 10%;
+    position: absolute;
+}
+
+.tile1{
+    top: 10%;
+    bottom: 10%;
+
+}
+
+.links > a {
+    color: #fbecec;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.links a:hover {
+  animation-duration: 0s;
+  animation-name: linkHover;
+}
+
+.first-col{
+    -webkit-box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
+-moz-box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
+    box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
+    border-radius: 2em;
+}
+
+
+@keyframes linkHover {
+  0% {
+    font-size: 1em;
+  }
+
+  100% {
+    font-size: 1.2em;
+    color: red;
+    font-weight: bold;
+    opacity: 1;
+  }
 }
