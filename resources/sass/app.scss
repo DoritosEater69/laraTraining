@@ -8,11 +8,15 @@
 @import '~bootstrap/scss/bootstrap';
 
 
+svg{
+    height: 10% !important;
+}
+
 .links{
     color: red !important;
 }
 
-body{
+html, main, body{
     background-color: #1d2d50 !Important;
 }
 
@@ -21,12 +25,12 @@ html, body
         color: #636b6f;
         font-family: 'Nunito', sans-serif;
         font-weight: 200;
-        height: 100vh;
+        height: 100%;
         margin: 0;
     }
 
     main{
-        margin-top: 10%;
+        margin-top: 15%;
     }
 
     .full-height {
@@ -58,8 +62,18 @@ html, body
     }
 
     .title {
-        font-size: 84px;
+        font-size: 20px;
         color: #fbecec;
+    }
+
+    .title h1{
+        font-size: 80px;
+        color:white;
+    }
+
+    .svgColumn svg{
+        width: 20% !important;
+        filter: blur(4px);
     }
 
     .m-b-md {
@@ -130,15 +144,24 @@ table, .table{
 }
 
 .title-overlay{
-    top: 60%;
+    top: 20%;
     bottom: 10%;
     position: absolute;
+    z-index: 3;
+}
+
+.title-overlay h1{
+    color: white;
+}
+
+.title-overlay span{
+    color: #ffcb8e;;
 }
 
 .tile1{
-    top: 10%;
-    bottom: 10%;
-
+    top: 110%;
+    position: absolute;
+    height: 100%;
 }
 
 .links > a {
@@ -152,28 +175,66 @@ table, .table{
     opacity: 0.7;
 }
 
+.links a:hover > svg {
+  animation-duration: 1s;
+  animation-name: linkHoverIcon;
+  animation-fill-mode:forwards;
+  text-decoration: none;
+}
+
 .links a:hover {
-  animation-duration: 0s;
-  animation-name: linkHover;
+  animation-duration: 1s;
+  animation-name: linkHoverFont;
+  animation-fill-mode:forwards;
+  text-decoration: none;
 }
 
-.first-col{
-    -webkit-box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
--moz-box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
-    box-shadow: -1px 0px 32px -4px rgba(255,255,255,0.67);
-    border-radius: 2em;
-}
-
-
-@keyframes linkHover {
+@keyframes linkHoverIcon {
   0% {
     font-size: 1em;
+    text-decoration: none;
   }
 
   100% {
-    font-size: 1.2em;
-    color: red;
+    filter: url(#svgFilter);
     font-weight: bold;
-    opacity: 1;
   }
+}
+
+@keyframes linkHoverFont {
+  0% {
+    font-size: 1em;
+    text-decoration: none;
+  }
+
+  100% {
+    font-size: 1.5em;
+    filter: blur(2px);
+    font-weight: bold;
+    color: #ffcb8e;
+  }
+}
+
+#bgTopLoop{
+    position: absolute;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(4px);
+}
+
+
+#bgBottomLoop{
+    position: absolute;
+    right: 0;
+    top: 180%;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(4px);
+}
+
+.h1Border{
+    border-left: 8px solid white !important;
 }
