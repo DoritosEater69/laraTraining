@@ -11059,7 +11059,9 @@ table td,
 }
 
 .links > a {
-  color: #fbecec;
+  color: #fbecec !important;
+  background-color: inherit !important;
+  border: none !important;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
@@ -11166,7 +11168,153 @@ table td,
           filter: blur(4px);
 }
 
-.h1Border {
-  border-left: 8px solid white !important;
+#bgBottomLoop2 {
+  position: absolute;
+  right: 0;
+  top: 250%;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.movingBackground .col-12 {
+  box-shadow: 0px 0px 42px 0px white;
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.modal .card {
+  box-shadow: 0px 0px 42px 0px white;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: modalAnim, modalBlur;
+          animation-name: modalAnim, modalBlur;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.modal .card label,
+input,
+button {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: modalTextAnim;
+          animation-name: modalTextAnim;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.modal .card .form-group button:hover > .icon-register svg {
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-name: modalSvgAnim;
+          animation-name: modalSvgAnim;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes modalAnim {
+  0% {
+    transform: rotate(0deg);
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: translateY(100px);
+    opacity: 1;
+  }
+}
+
+@keyframes modalAnim {
+  0% {
+    transform: rotate(0deg);
+    transform: translateY(-600px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: rotate(360deg);
+    transform: translateY(100px);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes modalTextAnim {
+  0% {
+    font-size: 0.8em;
+  }
+
+  100% {
+    font-size: 1.2em;
+  }
+}
+
+@keyframes modalTextAnim {
+  0% {
+    font-size: 0.8em;
+  }
+
+  100% {
+    font-size: 1.2em;
+  }
+}
+
+@-webkit-keyframes modalSvgAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes modalSvgAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes modalBlur {
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+@keyframes modalBlur {
+  50% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+  }
+}
+
+.btn-clear {
+  background-color: inherit;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn-clear:hover {
+  background-color: inherit;
+  border: 2px solid white;
 }
 
