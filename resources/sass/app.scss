@@ -1,147 +1,27 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
+// Variables - Colors and Fonts
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
+//Keyframes
+@import 'keyframes';
 
-svg{
-    height: 10% !important;
-}
+//General
+@import 'general';
 
-.links{
-    color: red !important;
-}
+//Bootstrap Modify
+@import 'bootstrapMod';
 
-html, main, body{
-    background-color: #1d2d50 !Important;
-}
+//Big BG Images
+@import 'images';
 
-html, body
-    {
-        color: #636b6f;
-        font-family: 'Nunito', sans-serif;
-        font-weight: 200;
-        height: 100%;
-        margin: 0;
-    }
-
-    main{
-        margin-top: 15%;
-    }
-
-    .full-height {
-        height: 100vh;
-    }
-
-    .flex-center {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-    }
-
-    .position-ref {
-        position: relative;
-    }
-
-    .top-right {
-        position: absolute;
-        right: 10px;
-        top: 18px;
-        position: fixed !important;
-        left: 0;
-        z-index: 1030;
-
-    }
-
-    .content {
-        text-align: center;
-    }
-
-    .title {
-        font-size: 20px;
-        color: #fbecec;
-    }
-
-    .title h1{
-        font-size: 80px;
-        color:white;
-    }
-
-    .svgColumn svg{
-        width: 20% !important;
-        filter: blur(4px);
-    }
-
-    .m-b-md {
-        margin-bottom: 30px;
-    }
-
-    .card{
-        color: white;
-        border: 0;
-        background-color: inherit;
-    }
-
-    .card-body{
-        background-color: #1e5f74;
-        opacity: 0.9;
-    }
-
-    .form-control{
-        color: white;
-        background-color: inherit;
-        border: 2px solid #ced4da;
-    }
-
-    .icon-register{
-        height: 10%;
-        width: 10%;
-    }
-
-    .icon-login{
-        height: 10%;
-        width: 10%;
-    }
-
-    .form-label{
-        font-size: 1.6em;
-    }
+//Media Queries
+@import 'queries';
 
 
-    .navbar{
-        background-color: #1a1a2e;
-        color: #ced4da;
-    }
+//Styling
 
-    .navbar a{
-        color: #ced4da;
-    }
-
-
-    .dropdown-menu{
-        background-color: #1e5f74;
-        color: white;
-    }
-
-
-table, .table{
-    th{
-        background-color: rgba(26, 26, 46, 0.5);
-        color: white;
-        border-top: 0;
-    }
-
-    td{
-        color: white;
-        font-weight: bold;
-        border-top: 0;
-    }
-
-}
 
 .title-overlay{
     top: 20%;
@@ -151,11 +31,11 @@ table, .table{
 }
 
 .title-overlay h1{
-    color: white;
+    color: $white;
 }
 
 .title-overlay span{
-    color: #ffcb8e;;
+    color: $paleBrown;;
 }
 
 .tile1{
@@ -165,7 +45,7 @@ table, .table{
 }
 
 .links > a {
-    color: #fbecec !important;
+    color: $paleRed !important;
     background-color: inherit !important;
     border: none !important;
     padding: 0 25px;
@@ -177,155 +57,23 @@ table, .table{
     opacity: 0.7;
 }
 
-.links a:hover > svg {
-  animation-duration: 1s;
-  animation-name: linkHoverIcon;
-  animation-fill-mode:forwards;
-  text-decoration: none;
-}
-
-.links a:hover {
-  animation-duration: 1s;
-  animation-name: linkHoverFont;
-  animation-fill-mode:forwards;
-  text-decoration: none;
-}
-
-@keyframes linkHoverIcon {
-  0% {
-    font-size: 1em;
-    text-decoration: none;
-  }
-
-  100% {
-    filter: url(#svgFilter);
-    font-weight: bold;
-  }
-}
-
-@keyframes linkHoverFont {
-  0% {
-    font-size: 1em;
-    text-decoration: none;
-  }
-
-  100% {
-    font-size: 1.5em;
-    filter: blur(2px);
-    font-weight: bold;
-    color: #ffcb8e;
-  }
-}
-
-#bgTopLoop{
-    position: absolute;
-    right: 0;
-    top: 0;
-    min-width: 100%;
-    min-height: 100%;
-    filter: blur(4px);
-}
-
-
-#bgBottomLoop{
-    position: absolute;
-    right: 0;
-    top: 180%;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    filter: blur(4px);
-}
-
-#bgBottomLoop2{
-    position: absolute;
-    right: 0;
-    top: 250%;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-}
-
 .movingBackground .col-12{
     -webkit-box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
     -moz-box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
     box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
 }
 
-.modal{
-    background-color: rgba(0,0,0,0.1);
+.spacer .row{
+    background: inherit;
+    text-align: center;
+    position: relative;
 }
 
-.modal .card{
-    box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
-    animation-duration: 1s;
-    animation-name: modalAnim, modalBlur;
-    animation-fill-mode:forwards;
+.spacer .row h1{
+    color: white !important;
+    border-left: 6px solid white;
+    font-size: 3em;
 }
 
-.modal .card label, input, button{
-    animation-duration: 1s;
-    animation-name: modalTextAnim;
-    animation-fill-mode:forwards;
-}
 
-.modal .card .form-group button:hover > .icon-register svg{
-    animation-duration: 1s;
-    animation-name: modalSvgAnim;
-    animation-fill-mode:forwards;
-}
-
-@keyframes modalAnim {
-  0% {
-    transform:rotate(0deg);
-    transform: translateY(-600px);
-    opacity: 0;
-  }
-
-  100% {
-    transform:rotate(360deg);
-    transform: translateY(100px);
-    opacity: 1;
-  }
-}
-
-@keyframes modalTextAnim {
-  0% {
-    font-size: 0.8em;
-  }
-
-  100% {
-   font-size: 1.2em;
-  }
-}
-
-@keyframes modalSvgAnim {
-  0% {
-    transform:rotate(0deg);
-  }
-
-  100% {
-   transform:rotate(360deg);
-  }
-}
-
-@keyframes modalBlur {
-  50% {
-    filter: blur(10px);
-  }
-
-  100% {
-    filter: blur(0px);
-  }
-}
-
-.btn-clear{
-    background-color: inherit;
-    border: 2px solid white;
-    color: white;
-}
-
-.btn-clear:hover{
-    background-color: inherit;
-    border: 2px solid white;
-}
+//END

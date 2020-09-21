@@ -1,0 +1,166 @@
+html, main, body{
+    background-color: $darkBlue !Important;
+}
+
+p, a, li{
+    font-family: 'Lato', cursive !important;
+}
+
+h1, h2{
+    font-family: 'Anton', cursive !important;
+}
+
+svg{
+    height: 10% !important;
+}
+
+.links a:hover > svg {
+  animation-duration: 1s;
+  animation-name: linkHoverIcon;
+  animation-fill-mode:forwards;
+  text-decoration: none;
+}
+
+.links a:hover {
+  animation-duration: 1s;
+  animation-name: linkHoverFont;
+  animation-fill-mode:forwards;
+  text-decoration: none;
+}
+
+html, body
+    {
+        color: $cyanBlue;
+        font-weight: 200;
+        height: 100%;
+        margin: 0;
+    }
+
+    main{
+        margin-top: 15%;
+    }
+
+    .full-height {
+        height: 100vh;
+    }
+
+    .flex-center {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .position-ref {
+        position: relative;
+    }
+
+    .top-right {
+        position: absolute;
+        right: 10px;
+        top: 18px;
+        position: fixed !important;
+        left: 0;
+        z-index: 1030;
+
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .title {
+        font-size: 20px;
+        color: $paleRed;
+    }
+
+    .title h1{
+        font-size: 80px;
+        color: $white;
+    }
+
+    .svgColumn svg{
+        width: 20% !important;
+        filter: blur(4px);
+    }
+
+    .m-b-md {
+        margin-bottom: 30px;
+    }
+
+    .card{
+        color: $white;
+        border: 0;
+        background-color: inherit;
+    }
+
+    .card-body{
+        background-color: $deepPowderBlue;
+        opacity: 0.9;
+    }
+
+    .form-control{
+        color: $white;
+        background-color: inherit;
+        border: 2px solid $linkWater;
+    }
+
+    .icon-register{
+        height: 10%;
+        width: 10%;
+    }
+
+    .icon-login{
+        height: 10%;
+        width: 10%;
+    }
+
+    .form-label{
+        font-size: 1.6em;
+    }
+
+
+    .navbar{
+        background-color: $blackRussian;
+        color: $linkWater;
+    }
+
+    .navbar a{
+        color: $linkWater;
+    }
+
+
+    .dropdown-menu{
+        background-color: $deepPowderBlue;
+        color: $white;
+    }
+
+
+table, .table{
+    th{
+        background-color: rgba(26, 26, 46, 0.5);
+        color: $white;
+        border-top: 0;
+    }
+
+    td{
+        color: $white;
+        font-weight: bold;
+        border-top: 0;
+    }
+}
+
+footer{
+    z-index: 999999999999;
+    background: $blackRussian;
+    color: $white;
+    padding-top: 60px;
+}
+
+footer h2{
+    color: $white;
+}
+
+footer img{
+    height: 30px;
+    width: auto;
+}

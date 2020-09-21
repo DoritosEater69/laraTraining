@@ -39,7 +39,7 @@
                 @endauth
             </div>
         @endif
-        <main class="py-4 h-100 w-100">
+        <main class="pt-4 h-100 w-100">
             @yield('content')
         </main>
     </div>
