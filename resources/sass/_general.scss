@@ -1,5 +1,6 @@
 html, main, body{
     background-color: $darkBlue !Important;
+    min-height: 100vh;
 }
 
 p, a, li{
@@ -38,6 +39,7 @@ html, body
 
     main{
         margin-top: 15%;
+        min-height: 100vh;
     }
 
     .full-height {

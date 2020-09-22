@@ -11036,6 +11036,7 @@ html,
 main,
 body {
   background-color: #1d2d50 !important;
+  min-height: 100vh;
 }
 
 p,
@@ -11083,6 +11084,7 @@ body {
 
 main {
   margin-top: 15%;
+  min-height: 100vh;
 }
 
 .full-height {

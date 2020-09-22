@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\UserUpdateRequest;
+use App\Http\Requests\UserCreationRequest;
+use Illuminate\Support\Facades\Validator;
 
 class UserManageActions extends Controller
 {
@@ -23,9 +26,9 @@ class UserManageActions extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        return view('user.create.user');
     }
 
     /**
@@ -34,9 +37,21 @@ class UserManageActions extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, User $user)
     {
-        //
+        $users = User::all();
+
+            $this->validate($request, [
+                'name' => ['required', 'string', 'max:255'],
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+                'password' => ['required', 'string', 'min:3', 'confirmed'],
+                // 'g-recaptcha-response' => 'required|captcha'
+            ]);
+
+        $request->merge(['password' => Hash::make($request->newPassword)]);
+        $newUser = User::create(request(['name', 'email', 'password']));
+
+        return view('userlist', compact('users'));
     }
 
     /**
@@ -69,16 +84,12 @@ class UserManageActions extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $user)
+    public function update(UserUpdateRequest $request, User $user)
     {
 
-        $user_data = User::find($user)->update(array(
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->newPassword)
-        ));
+        $request->merge(['password' => Hash::make($request->newPassword)]);
+        $user->update($request->all());
 
-        $user = User::find($user);
         return view('user.show.user', compact('user'));
         }
 

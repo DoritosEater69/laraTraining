@@ -20,7 +20,7 @@
                         <h1>If you are logged in - You can see this content.</h1>
                     </div>
                     @role('admin')
-                    <div class="col-12 title-overlay mx-0 px-0">
+                    <div class="col-12 title-overlay mx-0 px-0 mt-5">
                         <h1>If you are logged in and you're admin - You can see this content.</h1>
                     </div>
                     @endrole

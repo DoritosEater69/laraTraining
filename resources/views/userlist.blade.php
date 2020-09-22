@@ -41,6 +41,7 @@
 
                       </tbody>
                     </table>
+                    <a href="{{ route('user_manage.create') }}"><button type="button" class="btn btn-light">Create User</button></a>
                 </div>
             </div>
         </div>

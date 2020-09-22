@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
 
-    <footer class="footer">
+    <footer class="footer mt-5">
       <div class="container-fluid">
         <div class="row">
             <div class="col-6">

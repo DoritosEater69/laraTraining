@@ -44,6 +44,10 @@ Route::get('user/edit/{user}', 'UserManageActions@edit')->name('user_manage.edit
 Route::post('user/edit/{user}', 'UserManageActions@update')->name('user_manage.update')->middleware('auth', 'role:admin');
 Route::get('user/delete/{user}', 'UserManageActions@destroy')->name('user_manage.del')->middleware('auth', 'role:admin');
 
+Route::get('user/create/user', 'UserManageActions@create')->name('user_manage.create')->middleware('auth', 'role:admin');
+Route::post('user/store/user', 'UserManageActions@store')->name('user_manage.store')->middleware('auth', 'role:admin');
+
 Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
 Route::get('/blog', 'BlogController@index')->name('blog')->middleware('auth');
+
