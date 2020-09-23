@@ -8,6 +8,9 @@
                     <a href="{{ url('/home') }}">Dashboard</a>
                     <a href="{{ route('user_profile') }}">Profile</a>
                     <a href="{{ route('blog') }}">Blog</a>
+                @role('user')
+                    <a href="{{ route('admin_req') }}">Request Admin Status</a>
+                @endrole
 
                 @role('admin')
                     <a href="{{ route('admin') }}">Admin requests</a>

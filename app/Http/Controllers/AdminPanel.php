@@ -41,11 +41,30 @@ class AdminPanel extends Controller
     public function single($user){
         $users = User::where('request_admin_role', '1')->get();
 
-        $user_data = User::find($user);
-        $user_data->request_admin_role = false;
-        $user->assignRole('admin');
-        $user->removeRole('user');
-        $user_data->save();
+        $singleUser = User::find($user);
+        $singleUser->assignRole('admin');
+        $singleUser->removeRole('user');
+        $singleUser->request_admin_role = false;
+        $singleUser->save();
+
+        return redirect()->route('admin');
+    }
+
+    public function destroy(){
+        $users = User::where('request_admin_role', '1')->get();
+
+        $users->each(function($user) {
+            $user->request_admin_role = false;
+            $user->save();
+        });
+
+        return redirect()->route('admin');
+    }
+
+    public function destroySingle($user){
+        $singleUser = User::find($user);
+        $singleUser->request_admin_role = false;
+        $singleUser->save();
 
         return redirect()->route('admin');
     }

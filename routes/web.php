@@ -37,6 +37,8 @@ Route::get('/admin_request_send', 'AdminRequest@send')->name('admin_req_send')->
 Route::get('/admin_panel', 'AdminPanel@index')->name('admin')->middleware('auth', 'role:admin');
 Route::get('/admin_request_accept', 'AdminPanel@send')->name('admin_req_accept')->middleware('auth', 'role:admin');
 Route::get('/admin_request_accept_single/{user}', 'AdminPanel@single')->name('admin_req_accept_single')->middleware('auth', 'role:admin');
+Route::get('/admin_request_decline', 'AdminPanel@destroy')->name('admin_req_decline')->middleware('auth', 'role:admin');
+Route::get('/admin_request_decline_single/{user}', 'AdminPanel@destroySingle')->name('admin_req_decline_single')->middleware('auth', 'role:admin');
 
 
 Route::get('user/{user}', 'UserManageActions@show')->name('user_manage.show')->middleware('auth', 'role:admin');
