@@ -1,79 +1,8 @@
-// Variables - Colors and Fonts
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
-
-//Keyframes
-@import 'keyframes';
-
-//General
-@import 'general';
-
-//Bootstrap Modify
-@import 'bootstrapMod';
-
-//Big BG Images
-@import 'images';
-
-//Media Queries
-@import 'queries';
-
-
-//Styling
-
-
-.title-overlay{
-    top: 20%;
-    bottom: 10%;
-    position: absolute;
-    z-index: 3;
-}
-
-.title-overlay h1{
-    color: $white;
-}
-
-.title-overlay span{
-    color: $paleBrown;;
-}
-
-.tile1{
-    top: 110%;
-    position: absolute;
-    height: 100%;
-}
-
-.links > a {
-    color: $paleRed !important;
-    background-color: inherit !important;
-    border: none !important;
-    padding: 0 25px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    opacity: 0.7;
-}
-
-.movingBackground .col-12{
-    -webkit-box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
-    -moz-box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
-    box-shadow: 0px 0px 42px 0px rgba(255,255,255,1);
-}
-
-.spacer .row{
-    background: inherit;
-    text-align: center;
-    position: relative;
-}
-
-.spacer .row h1{
-    color: white !important;
-    border-left: 6px solid white;
-    font-size: 3em;
-}
-
-
-//END
