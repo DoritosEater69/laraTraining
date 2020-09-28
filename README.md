@@ -25,8 +25,8 @@
 * Profiles are editable by Admins or by the User himself<br><br>
 
 ## Modules / Packages used<br>
-[Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
-[No Chapta](https://github.com/anhskohbo/no-captcha)
-[Laravel UI/AUTH](https://github.com/laravel/ui)
+[Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)<br>
+[No Chapta](https://github.com/anhskohbo/no-captcha)<br>
+[Laravel UI/AUTH](https://github.com/laravel/ui)<br>
 [Laravel Permission](https://github.com/spatie/laravel-permission)
 
