@@ -19,6 +19,12 @@
                     <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
                         @csrf
                         <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
+                    <div class="row mt-5">
+                        <div class="col-12 d-flex justify-content-end">
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>

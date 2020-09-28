@@ -1,4 +1,4 @@
-@extends('layouts.app')
+ @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -38,6 +38,12 @@
                                 </button>
                             </div>
                         </div>
+                    <div class="row mt-5">
+                        <div class="col-12 d-flex justify-content-end">
+                            {!! NoCaptcha::renderJs() !!}
+                            {!! NoCaptcha::display() !!}
+                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
