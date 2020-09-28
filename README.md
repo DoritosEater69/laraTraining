@@ -23,3 +23,6 @@
 * Admin can accept or decline the Requests<br>
 * Edit, Deletion and Update of Profiles<br>
 * Profiles are editable by Admins or by the User himself<br>
+
+##Modules / Packages used<br>
+[GitHub](barryvdh/laravel-debugbar)
