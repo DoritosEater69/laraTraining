@@ -30,3 +30,7 @@
 [Laravel UI/AUTH](https://github.com/laravel/ui)<br>
 [Laravel Permission](https://github.com/spatie/laravel-permission)
 
+## Future Idea<br>
+
+<p>Python Program that Installs Laravel with all mentioned above Packages to avoid installing everything by hand</p><br><br>
+<p>It probably should also check Versions and Accept Names by the user and display errors (+ Solve them automatically)</p><br><br>
