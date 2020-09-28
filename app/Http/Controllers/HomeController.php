@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Mail;
+use App\Mail\welcome_mail;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class HomeController extends Controller
 {
@@ -21,8 +27,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+//Outputs the User Data
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $user_role = $user->roles->pluck('name');
+        return view('home', ['user' => $user]);
+    }
+
+//Sends Success Mail to the Users Email
+    public function sendMail()
+    {
+        $user = Auth::user();
+        Mail::to($user->email)->send(new welcome_mail($user));
+        return view('success', ['user' => $user]);
     }
 }

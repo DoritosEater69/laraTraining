@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +15,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+
 Route::get('/', function(){
     return view('welcome');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/success', 'HomeController@sendMail')->name('success');
 
 Route::get('/userprofile', 'UserProfile@index')->name('user_profile')->middleware('auth');

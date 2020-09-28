@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <span id="#home"></span>
 
     <video autoplay muted loop id="bgTopLoop"  style="z-index:2; opacity: 0.1;" uk-parallax="blur:200; viewport: 0.3;">
