@@ -7,7 +7,7 @@ use App\Http\Controllers\UserManagement;
 use App\Http\Controllers\AdminRequest;
 use App\Http\Controllers\AdminPanel;
 use App\Http\Controllers\UserManageActions;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\BlogController;
 
 

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Requests\UserCreationRequest;
 use Illuminate\Support\Facades\Validator;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UserManageActions extends Controller
 {
@@ -50,6 +53,7 @@ class UserManageActions extends Controller
 
         $request->merge(['password' => Hash::make($request->newPassword)]);
         $newUser = User::create(request(['name', 'email', 'password']));
+        $newUser->assignRole('user');
 
         return view('userlist', compact('users'));
     }
