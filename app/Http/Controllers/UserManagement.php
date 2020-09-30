@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
-use App\User;
+use App\Models\User;
 use Auth;
 
 class UserManagement extends Controller
