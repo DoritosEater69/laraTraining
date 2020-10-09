@@ -96,6 +96,43 @@
                 <h1>Test</h1>
             </div>
         </div>
+        <svg height="20%" width="20%" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 256 256" style="enable-background:new 0 0 256 256;" xml:space="preserve" uk-scroll href="#gallery">
+        <g>
+            <g>
+                <polygon points="225.813,48.907 128,146.72 30.187,48.907 0,79.093 128,207.093 256,79.093" fill="white"/>
+            </g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+        <g>
+        </g>
+    </svg>
         <div class="row h-100">
             <div class="col-12 title" uk-parallax="y: 20%,0%,0%;">
                 <div class="row">
@@ -129,7 +166,7 @@
 
 @include('includes.spacer')
 
-<div class="movingBackground">
+<div class="movingBackground" id="showcase">
     <div class="container title pt-0 mt-0 w-100 h-100 px-0 mx-auto">
         <img src="{{ asset('images/bottomBG.png') }}" id="bgBottomLoop2">
         <div class="row text-right">
@@ -176,7 +213,7 @@
 @include('includes.spacer')
 
 <div class="container-fluid title w-100 h-100 px-0 mx-0"  style="background: #1a1a2e !important">
-    <div class="row text-center w-100">
+    <div class="row text-center w-100" id="gallery">
         <div class="col-12 col-md-8 mx-auto"  uk-parallax="viewport: 0.5">
             <div class="uk-position-relative" uk-slideshow="animation: fade">
                 <ul class="uk-slideshow-items">

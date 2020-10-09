@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Roles;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\UserUpdateRequest;
 use App\Http\Requests\UserCreationRequest;
@@ -11,6 +12,7 @@ use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Traits\HasRoles;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+
 
 class UserManageActions extends Controller
 {
@@ -31,7 +33,8 @@ class UserManageActions extends Controller
      */
     public function create(Request $request)
     {
-        return view('user.create.user');
+        $roles = Roles::all();
+        return view('user.create.user', ['roles' => $roles]);
     }
 
     /**
@@ -43,19 +46,21 @@ class UserManageActions extends Controller
     public function store(Request $request, User $user)
     {
         $users = User::all();
+        $roles = Roles::all();
 
             $this->validate($request, [
                 'name' => ['required', 'string', 'max:255'],
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
                 'password' => ['required', 'string', 'min:3', 'confirmed'],
+                'role' => ['required'],
                 // 'g-recaptcha-response' => 'required|captcha'
             ]);
 
         $request->merge(['password' => Hash::make($request->newPassword)]);
         $newUser = User::create(request(['name', 'email', 'password']));
-        $newUser->assignRole('user');
+        $newUser->assignRole($request->role);
 
-        return view('userlist', compact('users'));
+        return view('userlist', ['users' => $users], ['roles' => $roles]);
     }
 
     /**
@@ -77,8 +82,9 @@ class UserManageActions extends Controller
      */
     public function edit($user)
     {
+        $roles = Roles::all();
         $user_data = User::find($user);
-        return view('user.edit.user', ['user' => $user_data]);
+        return view('user.edit.user', ['user' => $user_data],['roles' => $roles]);
     }
 
     /**

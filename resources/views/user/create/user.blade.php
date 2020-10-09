@@ -61,6 +61,18 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <select class="custom-select custom-select-lg mb-3" name="roleSelect">
+                                @foreach($roles as $role)
+                                    <option name="role" value="$role->name">
+                                    @if ($role == old('roleSelect', $role->option))
+                                        selected="selected"
+                                    @endif
+                                    {{ $role->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

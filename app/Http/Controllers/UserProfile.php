@@ -23,6 +23,7 @@ class UserProfile extends Controller
         'name' => 'string',
         'email' => 'string|max:255',
         'password' => 'min:1|max:100',
+        'role' => 'string',
         // 'g-recaptcha-response' => 'required|captcha'
         ]);
 
@@ -31,7 +32,8 @@ class UserProfile extends Controller
         $user->fill(array(
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->newPassword)
+            'password' => Hash::make($request->newPassword),
+            'role' => $request->role
         ));
         $user->save();
 
